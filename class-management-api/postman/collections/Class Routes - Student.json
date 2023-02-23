@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "8c35eb42-f6e6-439b-9a2f-82193218ec17",
+		"name": "Class Routes - Student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25672091-8c35eb42-f6e6-439b-9a2f-82193218ec17"
+	},
+	"item": [
+		{
+			"name": "Get Class by ID",
+			"id": "3d08b1f6-429c-4bf4-8f4e-57220344c256",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/student/class/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"class",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

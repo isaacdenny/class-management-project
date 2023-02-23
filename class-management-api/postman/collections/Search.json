@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "8f3c814b-3525-4738-9b6d-dae6681a80ee",
+		"name": "Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25672091-8f3c814b-3525-4738-9b6d-dae6681a80ee"
+	},
+	"item": [
+		{
+			"name": "Search For Teacher",
+			"id": "886a2bc1-e1a4-40a5-8f83-03435fb5d0b5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keyword\": \"Boise\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/teacher/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search For Student",
+			"id": "31dbe06e-d6c3-4b1a-a02c-2796ac392fea",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keyword\": \"Boise\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/student/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

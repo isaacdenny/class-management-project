@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "df2512ae-e74e-4a4e-b020-1c08ddcb4677",
+		"name": "Auth Routes - Teacher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25672091-df2512ae-e74e-4a4e-b020-1c08ddcb4677"
+	},
+	"item": [
+		{
+			"name": "Register Teacher",
+			"id": "21db1745-a1b6-4dde-aa52-9f7f01be4cb9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Dolores\",\r\n    \"LastName\": \"Umbridge\",\r\n    \"Email\": \"dumbridge@boisestate.edu\",\r\n    \"Password\": \"slytherin\",\r\n    \"School\": \"Boise State University\",\r\n    \"EmployeeID\": \"6789876\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/teacher/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Teacher",
+			"id": "3f7d071e-905a-48a0-b69c-9dffd3188fe4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"dumbridge@boisestate.edu\",\r\n    \"Password\": \"slytherin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/teacher/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "bef1d8e0-a078-4613-91eb-9f899a1cbeb9",
+		"name": "Auth Routes - Student",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25672091-bef1d8e0-a078-4613-91eb-9f899a1cbeb9"
+	},
+	"item": [
+		{
+			"name": "Register Student",
+			"id": "dd4087a6-54d5-447a-8ed1-23efe4b3ad69",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Mary\",\r\n    \"LastName\": \"Jane\",\r\n    \"Email\": \"maryjane2026@u.boisestate.edu\",\r\n    \"Password\": \"spiderman\",\r\n    \"School\": \"Boise State University\",\r\n    \"StudentID\": \"114217678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/student/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "32b15810-efb2-4559-90de-a82b32751eb9",
+					"name": "Register Student",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FirstName\": \"John\",\r\n    \"LastName\": \"Doe\",\r\n    \"Email\": \"johndoe2026@u.boisestate.edu\",\r\n    \"Password\": \"123456789\",\r\n    \"School\": \"Boise State University\",\r\n    \"StudentID\": \"114217677\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "cross-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "269"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10d-n9AUkYVdtE5eE53DiF3nHe7mRnY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 05 Feb 2023 05:38:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Register Successful -- {\\\"FirstName\\\":\\\"John\\\",\\\"LastName\\\":\\\"Doe\\\",\\\"Email\\\":\\\"johndoe2026@u.boisestate.edu\\\",\\\"Password\\\":\\\"$2b$10$N2q9SJC0WZfVeFXOmUxak.sLLu51gI9D8n.601gNJSVPbP5ss8p2C\\\",\\\"School\\\":\\\"Boise State University\\\",\\\"StudentID\\\":\\\"114217677\\\"}\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login Student",
+			"id": "4846dc85-6c34-42d0-b73e-60d6ab0bc451",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"johndoe2026@u.boisestate.edu\",\r\n    \"Password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/student/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Student 2",
+			"id": "bb6f79ab-1a93-4b59-8164-b635778501b4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"maryjane2026@u.boisestate.edu\",\r\n    \"Password\": \"spiderman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/student/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"student",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

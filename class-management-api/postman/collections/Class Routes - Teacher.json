@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "cc016086-ff2e-4dd8-97b2-aa23f0c9a517",
+		"name": "Class Routes - Teacher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25672091-cc016086-ff2e-4dd8-97b2-aa23f0c9a517"
+	},
+	"item": [
+		{
+			"name": "Create New Class",
+			"id": "12b12826-8255-4ebd-9708-6dd5ac185857",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ClassID\": \"1234\",\r\n    \"Title\": \"CS121\",\r\n    \"Description\": \"Entry-level CS course. Students will learn how to use Java and Git\",\r\n    \"Teacher\": \"Dolores Umbridge\",\r\n    \"ClassDays\": \"MWF\",\r\n    \"School\": \"Boise State University\",\r\n    \"StartTime\": \"14:35:00\",\r\n    \"EndTime\": \"16:15:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/teacher/create-class",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"create-class"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Class",
+			"id": "eaa54474-61fb-4fdd-beb9-7e4cd6ce7e92",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ClassID\": \"1234\",\r\n    \"Title\": \"CS121\",\r\n    \"Description\": \"Entry-level CS course. Students will learn how to use Java and Git\",\r\n    \"Teacher\": \"Dolores Umbridge\",\r\n    \"ClassDays\": \"MWF\",\r\n    \"School\": \"Boise State University\",\r\n    \"StartTime\": \"14:35:00\",\r\n    \"EndTime\": \"16:15:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/teacher/modify-class",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"modify-class"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Class by ID",
+			"id": "b5b115b2-7854-4a22-bb0c-e4f89ea14f21",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/teacher/class/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teacher",
+						"class",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
