@@ -8,14 +8,15 @@ remove their classes. Students can enroll in classes at their university.
 
 ## Technologies
 
-### API
+### Back-End API & Routing
 - NodeJS
+- Express
+
+### Database
+- MySQL
 
 ### Testing
 - Postman
-
-### Routing
-- Express
 
 ### Deployment
 - Docker
@@ -23,9 +24,6 @@ remove their classes. Students can enroll in classes at their university.
 ### Hosting
 - Firebase
 - Vercel
-
-### Database
-- MySQL
 
 ### Dev Environment
 - NextJS
@@ -44,7 +42,6 @@ remove their classes. Students can enroll in classes at their university.
 ## Schema
 
 ### Student
-
 - id (PK)
 - username
 - email (UNIQUE)
@@ -54,7 +51,6 @@ remove their classes. Students can enroll in classes at their university.
 - updated_at
 
 ### Teacher
-
 - id (PK)
 - username
 - email (UNIQUE)
@@ -63,7 +59,6 @@ remove their classes. Students can enroll in classes at their university.
 - updated_at
 
 ### Class
-
 - id (PK)
 - title
 - description
@@ -75,7 +70,6 @@ remove their classes. Students can enroll in classes at their university.
 - published_status
 
 ### Class-Student Connection Table
-
 - class.id
 - student.id
 
