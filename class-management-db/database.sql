@@ -13,7 +13,7 @@ CREATE TABLE if not exists students (
   UNIQUE (Email, StudentID)
 );
 
-INSERT INTO students (FirstName, LastName, Email, School, StudentID) VALUES ("John", "Smith", "johnsmith2022@u.boisestate.edu", "Boise State University", "114229887"), ("Jane", "Smith", "janesmith2022@u.boisestate.edu", "Boise State University", "114229885");
+INSERT INTO students (FirstName, LastName, Email, Password, School, StudentID) VALUES ("John", "Smith", "johnsmith2022@u.boisestate.edu", "1234", "Boise State University", "114229887"), ("Jane", "Smith", "janesmith2022@u.boisestate.edu", "123456", "Boise State University", "114229885");
 
 CREATE TABLE if not exists teachers (
   id int NOT NULL AUTO_INCREMENT,
@@ -27,4 +27,4 @@ CREATE TABLE if not exists teachers (
   UNIQUE (Email, EmployeeID)
 );
 
-INSERT INTO teachers (FirstName, LastName, Email, School, EmployeeID) VALUES ("Delores", "Umbridge", "dumbridge@boisestate.edu", "Boise State University", "223387234"), ("Harold", "Hoser", "hhoser2022@boisestate.edu", "Boise State University", "223389321");
+INSERT INTO teachers (FirstName, LastName, Email, Password, School, EmployeeID) VALUES ("Delores", "Umbridge", "dumbridge@boisestate.edu", "12345", "Boise State University", "223387234"), ("Harold", "Hoser", "hhoser2022@boisestate.edu", "123456", "Boise State University", "223389321");

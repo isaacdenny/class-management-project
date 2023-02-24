@@ -9,13 +9,35 @@ const Auth = () => {
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [employeeID, setEmployeeID] = useState("");
   const [school, setSchool] = useState("");
-
+  
+  const host = "localhost";
+  const port = 8080;
+  
   const handleRegister = (event: any) => {
     event.preventDefault();
-    console.log(first, last, email, password, confirmPassword, employeeID, school);
+    console.log(first, last, email, password, employeeID, school);
+
+    fetch(`http://${host}:${port}/teacher/auth/register`, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        FirstName: first,
+        LastName: last,
+        Email: email,
+        Password: password,
+        EmployeeID: employeeID,
+        School: school,
+      })
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+    });
   }
   const handleSignIn = (event: any) => {
     event.preventDefault();
@@ -34,7 +56,7 @@ const Auth = () => {
         {isRegistering ? (
           <div>
             <h1 className={styles.title}>
-              Student Register
+              Teacher Register
             </h1>
 
             <p className={styles.description}>
@@ -46,7 +68,7 @@ const Auth = () => {
               <input type="text" name="last" placeholder='Last Name' value={last} onChange={(e) => setLast(e.target.value)} />
               <input type="text" name="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
               <input placeholder='Password' name="password" type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-              <input type="text" name="studentID" placeholder='Student ID' value={employeeID} onChange={(e) => setEmployeeID(e.target.value)} />
+              <input type="text" name="EmployeeID" placeholder='Employee ID' value={employeeID} onChange={(e) => setEmployeeID(e.target.value)} />
               <input type="text" name="school" placeholder='School Name' value={school} onChange={(e) => setSchool(e.target.value)} />
               <button className={styles.button} type='submit'>Register</button>
             </form>
@@ -54,7 +76,7 @@ const Auth = () => {
         ) : (
           <div>
             <h1 className={styles.title}>
-              Student Sign In
+              Teacher Sign In
             </h1>
 
             <p className={styles.description}>

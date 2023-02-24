@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import styles from '../../styles/Student.module.css'
+import styles from '../../styles/Auth.module.css'
 
 const Auth = () => {
   const [isRegistering, setIsRegistering] = useState(true);
@@ -9,13 +9,35 @@ const Auth = () => {
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [studentID, setStudentID] = useState("");
   const [school, setSchool] = useState("");
 
+  const host = "localhost";
+  const port = 8080;
+
   const handleRegister = (event: any) => {
     event.preventDefault();
-    console.log(first, last, email, password, confirmPassword, studentID, school);
+    console.log(first, last, email, password, studentID, school);
+
+    fetch(`http://${host}:${port}/student/auth/register`, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        FirstName: first,
+        LastName: last,
+        Email: email,
+        Password: password,
+        StudentID: studentID,
+        School: school,
+      })
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   }
   const handleSignIn = (event: any) => {
     event.preventDefault();
