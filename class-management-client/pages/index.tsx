@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -21,15 +22,15 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="/student" className={styles.card}>
+          <Link href="/student/Auth" className={styles.card}>
             <h2>Student &rarr;</h2>
             <p>View your classes and grades in the CM Student Center</p>
-          </a>
+          </Link>
 
-          <a href="/teacher" className={styles.card}>
+          <Link href="/teacher/Auth" className={styles.card}>
             <h2>Teacher &rarr;</h2>
             <p>Manage your classes and grades in the CM Teacher Center</p>
-          </a>
+          </Link>
         </div>
       </main>
 
