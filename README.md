@@ -1,12 +1,10 @@
-# class-management-api
+# class-management-project
 Class Management application portal for teachers and students
 
 ## Project Summary
 This full-stack application provides students and teachers with a platform 
 to view all of their classes in a calendar form. Teachers can add, or 
 remove their classes. Students can enroll in classes at their university.
-
-See the [client repo](https://github.com/isaacdenny/class-management-client).
 
 ## Technologies
 
