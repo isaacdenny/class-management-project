@@ -5,7 +5,7 @@ import { getClass, getClasses } from "../controllers/student/class.js";
 
 const router = express.Router();
 
-router.get("/auth/login", login);
+router.post("/auth/login", login);
 router.post("/auth/register", register);
 router.get("/search", search);
 router.get("/class/:id", getClass);

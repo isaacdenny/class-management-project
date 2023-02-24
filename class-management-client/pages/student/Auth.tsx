@@ -37,12 +37,27 @@ const Auth = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-      });
+        setIsRegistering(false);
+    });
   }
   const handleSignIn = (event: any) => {
     event.preventDefault();
-    console.log(event.target.email.value)
-    console.log(event.target.password.value)
+    fetch(`http://${host}:${port}/student/auth/login`, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Email: email,
+        Password: password,
+      })
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        // TODO: navigate to dashboard
+      });
   }
 
   return (

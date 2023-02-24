@@ -9,6 +9,7 @@ export const login = async (req, res) => {
     const query = db.query(sql, async (err, result) => {
       if (err) console.log(err);
       const userData = result[0];
+      console.log(userData.Password, Password);
       if (!userData)
         return res
           .status(400)
