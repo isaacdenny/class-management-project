@@ -1,4 +1,4 @@
-# class-management-api
+# class-management-project
 Class Management application portal for teachers and students
 
 ## Project Summary
@@ -6,18 +6,17 @@ This full-stack application provides students and teachers with a platform
 to view all of their classes in a calendar form. Teachers can add, or 
 remove their classes. Students can enroll in classes at their university.
 
-See the [client repo](https://github.com/isaacdenny/class-management-client).
-
 ## Technologies
 
-### API
+### Back-End API & Routing
 - NodeJS
+- Express
+
+### Database
+- MySQL
 
 ### Testing
 - Postman
-
-### Routing
-- Express
 
 ### Deployment
 - Docker
@@ -25,9 +24,6 @@ See the [client repo](https://github.com/isaacdenny/class-management-client).
 ### Hosting
 - Firebase
 - Vercel
-
-### Database
-- MySQL
 
 ### Dev Environment
 - NextJS
@@ -46,7 +42,6 @@ See the [client repo](https://github.com/isaacdenny/class-management-client).
 ## Schema
 
 ### Student
-
 - id (PK)
 - username
 - email (UNIQUE)
@@ -56,7 +51,6 @@ See the [client repo](https://github.com/isaacdenny/class-management-client).
 - updated_at
 
 ### Teacher
-
 - id (PK)
 - username
 - email (UNIQUE)
@@ -65,7 +59,6 @@ See the [client repo](https://github.com/isaacdenny/class-management-client).
 - updated_at
 
 ### Class
-
 - id (PK)
 - title
 - description
@@ -77,7 +70,6 @@ See the [client repo](https://github.com/isaacdenny/class-management-client).
 - published_status
 
 ### Class-Student Connection Table
-
 - class.id
 - student.id
 
