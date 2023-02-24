@@ -2,19 +2,21 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import styles from '../../styles/Auth.module.css'
+import { useStateProvider } from '../../context/state'
 
 const Auth = () => {
   const [isRegistering, setIsRegistering] = useState(true);
+  const [state, setState] = useStateProvider();
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [employeeID, setEmployeeID] = useState("");
   const [school, setSchool] = useState("");
-  
+
   const host = "localhost";
   const port = 8080;
-  
+
   const handleRegister = (event: any) => {
     event.preventDefault();
     console.log(first, last, email, password, employeeID, school);
@@ -37,7 +39,7 @@ const Auth = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-    });
+      });
   }
   const handleSignIn = (event: any) => {
     event.preventDefault();
@@ -55,6 +57,8 @@ const Auth = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        const user = { FirstName: data.FirstName, LastName: data.LastName, Email: data.Email, Password: data.Password, ID: data.EmployeeID, School: data.School };
+        setState({ user: user, token: data.token })
         // TODO: navigate to dashboard
       });
   }

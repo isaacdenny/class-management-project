@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { useStateProvider } from '../../context/state'
 import styles from '../../styles/Auth.module.css'
 
 const Auth = () => {
   const [isRegistering, setIsRegistering] = useState(true);
+  const [state, setState] = useStateProvider();
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
@@ -56,6 +58,8 @@ const Auth = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setState(data);
+        console.log(state)
         // TODO: navigate to dashboard
       });
   }
