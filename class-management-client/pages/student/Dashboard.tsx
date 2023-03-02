@@ -1,10 +1,10 @@
 import React from 'react'
-import { useStateProvider } from '../../context/state'
+import { useStateProvider } from '../../context/AppContext'
 
 const Dashboard = () => {
-  const [state, setState] = useStateProvider()
+  const { state, dispatch } = useStateProvider()
   return (
-    <div>Current State: { JSON.stringify(state) }</div>
+    <div>Current State: {JSON.stringify(state)}</div>
   )
 }
 

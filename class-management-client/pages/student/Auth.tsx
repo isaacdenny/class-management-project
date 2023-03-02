@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { useStateProvider } from '../../context/state'
+import { useStateProvider } from '../../context/AppContext'
 import styles from '../../styles/Auth.module.css'
 
 const Auth = () => {
   const [isRegistering, setIsRegistering] = useState(true);
-  const [state, setState] = useStateProvider();
+  const { state, dispatch } = useStateProvider();
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
@@ -40,11 +40,11 @@ const Auth = () => {
       .then((data) => {
         console.log(data);
         setIsRegistering(false);
-    });
+      });
   }
-  const handleSignIn = (event: any) => {
+  const handleLogin = (event: any) => {
     event.preventDefault();
-    fetch(`http://${host}:${port}/student/auth/login`, {
+    fetch(`http://${host}:${port}/teacher/auth/login`, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -58,11 +58,28 @@ const Auth = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setState(data);
-        console.log(state)
+        dispatch({
+          type: "LOGIN",
+          payload: {
+            FirstName: data.FirstName,
+            LastName: data.LastName,
+            Email: data.Email,
+            Password: data.Password,
+            ID: data.ID,
+            School: data.School,
+            isTeacher: true,
+          },
+        });
         // TODO: navigate to dashboard
       });
   }
+
+  const handleLogout = () => {
+    dispatch({
+      type: "LOGOUT",
+      payload: {},
+    });
+  };
 
   return (
     <div className={styles.container}>
@@ -102,7 +119,7 @@ const Auth = () => {
               Sign In Below.
             </p>
 
-            <form onSubmit={handleSignIn}>
+            <form onSubmit={handleLogin}>
               <input type="text" name="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
               <input placeholder='Password' name="password" type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
               <button className={styles.button} type='submit'>Sign in</button>
